@@ -1,0 +1,125 @@
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+/* modal popping with little bounce */
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0,8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* background animination */
+@keyframes gradient {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50px;}
+    100% { background-position: 0% 50%;}
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    /* animation */
+
+    background: linear-gradient(135deg, #3e1f00, #8b5e3c, #c68642, #f5edda );
+    background-size: 300% 300%;
+    animation: gradient 8s ease infinite;
+}
+
+.form {
+
+    background-color: #ede0c8;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+
+    /* slide up aninmation */
+
+    animation: slideUp 0.5s ease forwards;
+}
+
+.form h1 {
+    margin-bottom: 6px;
+    font-size: 24px;
+    color: #3e1f00;
+}
+
+.form label {
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+.form input {
+    padding: 11px 14px;
+    margin-bottom: 18px;
+    border: 2px;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border color 0.3s ease;
+}
+
+.form input:focus {
+    border-color: #3e1f00;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    background-color: #fff;
+    padding: 40px 36px;
+    border-radius: 16px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+
+    animation: pop 0.3s ease forwards;
+}
+
+#modal .icon {
+    font-size: 20px;
+    color: #8b5e3c;
+    margin-bottom: 8px;
+
+}
